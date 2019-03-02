@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jtn-gS-1hy">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reminders-->
+        <scene sceneID="pL4-zt-TTW">
+            <objects>
+                <tableViewController id="We6-0C-kbT" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ogE-LX-Dzt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="3Pq-ep-2FT">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Pq-ep-2FT" id="dCz-PC-qo1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="We6-0C-kbT" id="eX1-ah-Em4"/>
+                            <outlet property="delegate" destination="We6-0C-kbT" id="B9s-S4-J4d"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Reminders" id="BdH-xu-XMO">
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="2nj-zl-JYa">
+                            <connections>
+                                <segue destination="KWd-5T-dWU" kind="presentation" id="seR-ba-RRd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lwZ-eb-KTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1104.8" y="115.59220389805098"/>
+        </scene>
+        <!--Add Reminder-->
+        <scene sceneID="sBG-T1-9io">
+            <objects>
+                <viewController id="ukH-kf-uub" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xt5-Ck-L9I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind me to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNj-IN-kai">
+                                <rect key="frame" x="134.5" y="104" width="106" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What do you need to remember" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lLQ-GG-ATS">
+                                <rect key="frame" x="32" y="142" width="311" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="26A-0I-dlY">
+                                <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="573234690.97205603">
+                                    <!--2019-03-02 15:51:30 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="26A-0I-dlY" firstAttribute="trailing" secondItem="Cay-xd-32r" secondAttribute="trailing" id="5LD-ii-pRh"/>
+                            <constraint firstItem="lLQ-GG-ATS" firstAttribute="leading" secondItem="Cay-xd-32r" secondAttribute="leading" constant="32" id="6i0-en-Msj"/>
+                            <constraint firstItem="Cay-xd-32r" firstAttribute="bottom" secondItem="26A-0I-dlY" secondAttribute="bottom" id="8Ju-Nd-HLw"/>
+                            <constraint firstItem="lLQ-GG-ATS" firstAttribute="top" secondItem="DNj-IN-kai" secondAttribute="bottom" constant="17" id="NWR-8e-WJy"/>
+                            <constraint firstItem="Cay-xd-32r" firstAttribute="trailing" secondItem="lLQ-GG-ATS" secondAttribute="trailing" constant="32" id="Rhc-C5-bjE"/>
+                            <constraint firstItem="DNj-IN-kai" firstAttribute="top" secondItem="Cay-xd-32r" secondAttribute="top" constant="40" id="bS2-2d-Heg"/>
+                            <constraint firstItem="DNj-IN-kai" firstAttribute="centerX" secondItem="Cay-xd-32r" secondAttribute="centerX" id="lEi-ok-b86"/>
+                            <constraint firstItem="26A-0I-dlY" firstAttribute="leading" secondItem="Cay-xd-32r" secondAttribute="leading" id="sWu-xf-HoC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cay-xd-32r"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Reminder" id="OqG-bg-1yK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="VMS-LB-Nos"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lMO-AJ-ubA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3161" y="116"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="muv-rN-zLN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jtn-gS-1hy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ESv-jW-61w">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="We6-0C-kbT" kind="relationship" relationship="rootViewController" id="IYY-QX-m1J"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tC0-Qg-oyk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="165.59999999999999" y="115.59220389805098"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="N1O-aq-xrU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KWd-5T-dWU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ta5-UT-kNd">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ukH-kf-uub" kind="relationship" relationship="rootViewController" id="4Yp-YL-DTy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fnA-IU-2MR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2161" y="99"/>
+        </scene>
+    </scenes>
+</document>
